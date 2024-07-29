@@ -1,0 +1,65 @@
+.chat-container {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.chat-box {
+    margin-bottom: 10px;
+}
+
+.user-message {
+    text-align: right;
+    padding: 10px;
+    background-color: #16c009 !important;
+    color: white !important;
+    border-radius: 15px;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.bot-message {
+    text-align: left;
+    padding: 10px;
+    background-color: #f1f0f0 !important;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 600px;
+}
+
+.typing-animation {
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="row my-2 mb-4">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="display-2 text-center py-2 fw-bold text-primary">Ask-GPT </div>
+            <div class="small text-center fs-4 text-light">
+                <small>Open source API - <a class="text-decoration-none"
+                        href="https://rapidapi.com/NextAPI/api/cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api"
+                        target="_blank">Cheapest GPT</a> </small>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header text-center">
+            <h4 class="">Ask Basic Get Basic </h4>
+        </div>
+        <div class="card-body chat-container" style="background-color: black !important;">
+            <div *ngFor="let message of messages" class="chat-box">
+                <div [ngClass]="{'user-message': message.role === 'user', 'bot-message': message.role === 'bot'}">
+                    <div class="m-1 ans" *ngIf="!message.typing" [innerHTML]="message.content">{{ message.content }}
+                    </div>
+                    <div class="m-1" *ngIf="message.typing" [innerHTML]="message.content"><span
+                            class="typing-animation">|</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="input-group">
+                <input [(ngModel)]="userInput" autofocus (keydown.enter)="sendMessage()" type="text"
+                    class="form-control" placeholder="Message Ask-GPT...">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" (click)="sendMessage()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
+                            </path>
+                        </svg>
+                        Ask
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="small fs-4 text-center text-light">Made by - <a href="https://hiayush.netlify.app/"
+                class="text-decoration-none" target="_blank">Ayush Srivastava</a> </div>
+    </div>
+</div>
